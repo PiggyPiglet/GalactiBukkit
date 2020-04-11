@@ -1,0 +1,13 @@
+main: me.piggypiglet.galacticraft.boot.GalacticraftBootstrap
+version: @version@
+api-version: "1.15"
+description: Galacticraft in spigot!
+name: Galacticraft
+author: PiggyPiglet
+website: https://piggypiglet.me
+depend:
+  - ProtocolLib
+commands:
+  galacticraft:
+    aliases: ["gc"]
+    description: Main galacticraft command
