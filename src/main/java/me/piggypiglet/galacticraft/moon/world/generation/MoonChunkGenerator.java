@@ -1,5 +1,6 @@
 package me.piggypiglet.galacticraft.moon.world.generation;
 
+import me.piggypiglet.galacticraft.moon.MoonConstants;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.generator.ChunkGenerator;
@@ -24,10 +25,10 @@ public final class MoonChunkGenerator extends ChunkGenerator {
         for (int x = 0; x < 16; ++x) {
             for (int z = 0; z < 16; ++z) {
                 final int currentHeight = (int) ((generator.noise(chunkX * 16 + x, chunkZ * 16 + z, 0.005D, 0.05D, true) + 1) * 25D + 50D);
-                chunk.setBlock(x, currentHeight, z, Material.QUARTZ_BLOCK);
+                chunk.setBlock(x, currentHeight, z, MoonConstants.MOON_SURFACE[random.nextInt(8)]);
 
                 for (int i = currentHeight - 1; i > 0; --i)
-                    chunk.setBlock(x, i, z, Material.BONE_BLOCK);
+                    chunk.setBlock(x, i, z, MoonConstants.MOON_INSIDE[random.nextInt(4)]);
 
                 chunk.setBlock(x, 0, z, Material.BEDROCK);
             }

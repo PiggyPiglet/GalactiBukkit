@@ -93,6 +93,6 @@ public final class GravityUpdateTask implements Runnable {
             positions.put(uuid, entity.getLocation());
         }
 
-        Bukkit.getScheduler().runTaskLater(main, this, 1L);
+//        Bukkit.getScheduler().runTaskLater(main, this, 1L);
     }
 }

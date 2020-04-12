@@ -22,6 +22,7 @@ dependencies {
     compileOnly "com.destroystokyo.paper:paper-api:1.15.2-R0.1-SNAPSHOT"
     compileOnly "org.jetbrains:annotations:+"
     compileOnly "com.comphenix.protocol:ProtocolLib:4.5.0"
+    compile 'net.jodah:expiringmap:+'
     compile("com.google.inject:guice:4.2.2") {
         exclude group: "com.google.code.gson", module: "gson"
         exclude group: "com.google.guava", module: "guava"
