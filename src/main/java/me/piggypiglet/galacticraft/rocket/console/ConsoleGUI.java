@@ -14,17 +14,23 @@ import org.jetbrains.annotations.NotNull;
 // https://www.piggypiglet.me
 // ------------------------------
 public final class ConsoleGUI implements InventoryHolder {
-    private static final ItemStack[] ITEMS = new ItemStack[27];
+    private static final ItemStack[] ITEMS = new ItemStack[9];
 
     static {
-        final ItemStack filler = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
+        final ItemStack black = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
 
-        for (int i = 0; i < 27; ++i) {
-            ITEMS[i] = filler;
+        for (int i = 0; i <= 8; i = i + 4) {
+            ITEMS[i] = black;
         }
 
-        ITEMS[10] = create(Material.FIRE_CHARGE, "Launch", ChatColor.RED);
-        ITEMS[16] = create(Material.BUCKET, "Fuel", ChatColor.YELLOW);
+        final ItemStack blue = new ItemStack(Material.LIGHT_BLUE_STAINED_GLASS_PANE);
+
+        for (int i = 1; i <= 7; i = i + 2) {
+            ITEMS[i] = blue;
+        }
+
+        ITEMS[2] = create(Material.FIRE_CHARGE, "Launch", ChatColor.RED);
+        ITEMS[6] = create(Material.BUCKET, "Fuel", ChatColor.YELLOW);
     }
 
     private static ItemStack create(@NotNull final Material material, @NotNull final String name,
@@ -40,7 +46,7 @@ public final class ConsoleGUI implements InventoryHolder {
     private final Inventory inventory;
 
     private ConsoleGUI() {
-        inventory = Bukkit.createInventory(this, 27, ChatColor.DARK_GRAY + "Rocket Console");
+        inventory = Bukkit.createInventory(this, 9, ChatColor.DARK_GRAY + "Rocket Console");
     }
 
     public static ConsoleGUI create() {

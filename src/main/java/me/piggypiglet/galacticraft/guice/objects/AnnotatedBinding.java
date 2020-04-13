@@ -12,12 +12,12 @@ public final class AnnotatedBinding<T> extends Binding<T> {
     private final Object annotation;
 
     public AnnotatedBinding(@NotNull final Binding<T> binding, @NotNull final Annotation annotation) {
-        super(binding.getTypeLiteral(), binding.getInstance());
+        super(binding);
         this.annotation = annotation;
     }
 
     public AnnotatedBinding(@NotNull final Binding<T> binding, @NotNull final Class<? extends Annotation> annotation) {
-        super(binding.getInterface(), binding.getInstance());
+        super(binding);
         this.annotation = annotation;
     }
 

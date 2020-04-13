@@ -1,7 +1,8 @@
 package me.piggypiglet.galacticraft.commands.implementations;
 
 import me.piggypiglet.galacticraft.commands.framework.Command;
-import me.piggypiglet.galacticraft.rocket.launch.tasks.CountdownTask;
+import me.piggypiglet.galacticraft.rocket.launch.Launch;
+import org.bukkit.Sound;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -15,6 +16,7 @@ import javax.inject.Inject;
 // ------------------------------
 public final class TestCommand extends Command {
     @Inject private JavaPlugin main;
+    @Inject private Launch launch;
 
     public TestCommand() {
         super("test");
@@ -24,7 +26,10 @@ public final class TestCommand extends Command {
     public boolean execute(final @NotNull CommandSender sender, @NotNull final String[] args) {
         final Player player = (Player) sender;
 
-        new CountdownTask(player, main).run();
+        player.getWorld().playSound(player.getLocation(), Sound.ITEM_FIRECHARGE_USE, 1.5f, 0.1f);
+        player.getWorld().playSound(player.getLocation(), Sound.ITEM_TOTEM_USE, 0.3f, 0.1f);
+
+//        launch.launch(player);
 
         return true;
     }

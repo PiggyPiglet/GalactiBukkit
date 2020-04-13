@@ -21,6 +21,11 @@ public class Binding<T> {
         this.instance = instance;
     }
 
+    protected Binding(@NotNull final Binding<T> binding) {
+        type = binding.type;
+        instance = binding.instance;
+    }
+
     @SuppressWarnings("unchecked")
     @NotNull
     public TypeLiteral<? super T> getTypeLiteral() {
