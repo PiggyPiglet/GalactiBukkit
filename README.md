@@ -9,12 +9,18 @@ This is my entry for Global Developers' spigot plugin contest. In it's current s
 
 ### Bugs
 - Placed rockets can't be picked up after a server restart, make sure to pickup your rocket before the server stops. If you accidentally leave a rocket placed, right click on the rocket till you find the head to retrieve the item back, then kill the armor stands via command (e.g. /kill @e[type=armor_stand]).
+- Gravity algorithm is severely affected by latency
+- Gravity algorithm doesn't apply to strafing while in air (resulting in the illusion of not being able to strafe; you can strafe, it's just slow)
+- Velocity is preserved after jumping, leading to exponential speed increase (gravity algorithm)
 
 ### Quick Tutorial
 This plugin isn't gameplay ready yet, so here's how to test out it's features:
 
 #### Launch Pads
 - Create a 3x3 flat area of purpur slabs. The slabs can be different height, so long they're in the same block y coordinate.
+
+#### Gravity
+Gravity is disabled by default due to all the bugs listed above, if you wish to experiment with it, uncomment the `GravityRegisterable.class` in `GalacticraftBootstrap#REGISTERABLES`.
 
 #### Rockets
 Recipe:

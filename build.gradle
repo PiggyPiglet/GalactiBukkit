@@ -54,9 +54,9 @@ shadowJar {
     exclude "META-INF/*.DSA"
     exclude "META-INF/*.RSA"
 
-    relocate "net.jodah", "me.piggypiglet.galacticraft.deps"
-    relocate "javax", "me.piggypiglet.galacticraft.deps.javax"
-    relocate "com.google", "me.piggypiglet.galacticraft.deps.google"
+    relocate "net.jodah.expiringmap", "me.piggypiglet.galacticraft.deps.expiringmap"
+    relocate "javax.inject", "me.piggypiglet.galacticraft.deps.javax.inject"
+    relocate "com.google.inject", "me.piggypiglet.galacticraft.deps.google.inject"
     relocate "org.aopalliance", "me.piggypiglet.galacticraft.deps.aopalliance"
 
     destinationDirectory = file("server/plugins")
