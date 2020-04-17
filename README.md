@@ -40,4 +40,7 @@ Gravity is disabled by default due to all the bugs listed above, if you wish to 
 [![demo](https://p1g.pw/gc/trickvideo.PNG)](https://p1g.pw/gc/rockets3.mp4)
 
 ### Commands
-Only debug commands are currently implemented. The rocket system doesn't have world changing yet, so use `/gc switch-world <world>` to switch world for now. The moon world is simply called `world`. 
+Only debug commands are currently implemented. The rocket system doesn't have world changing yet, so use `/gc switch-world <world>` to switch world for now. The moon world is simply called `world`.
+
+### Premade world
+[Funnycube](https://funnycube.net) made me a platform & a dungeon (he also converted the rocket model into minecraft format), however I didn't get around to implementing these into the world generator in the deadline. If you'd like to see them, you can download the world [here](https://p1g.pw/gc/moonwithbuilds.7z).
