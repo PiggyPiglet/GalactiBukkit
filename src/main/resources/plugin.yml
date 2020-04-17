@@ -1,6 +1,7 @@
 main: me.piggypiglet.galacticraft.boot.GalacticraftBootstrap
 version: @version@
 api-version: "1.15"
+prefix: GC
 description: Galacticraft in spigot!
 name: Galacticraft
 author: PiggyPiglet

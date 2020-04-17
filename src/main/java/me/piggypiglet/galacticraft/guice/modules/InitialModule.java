@@ -5,6 +5,7 @@ import me.piggypiglet.galacticraft.scanning.framework.Scanner;
 import me.piggypiglet.galacticraft.scanning.implementations.ZISScanner;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
 
 // ------------------------------
 // Copyright (c) PiggyPiglet 2020
@@ -32,5 +33,11 @@ public final class InitialModule extends AbstractModule {
     @Singleton
     public Scanner providesScanner() {
         return ZISScanner.create();
+    }
+
+    @Provides
+    @Singleton
+    public Logger providesLogger() {
+        return main.getSLF4JLogger();
     }
 }

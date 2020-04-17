@@ -14,7 +14,7 @@ repositories {
         url = "https://papermc.io/repo/repository/maven-public/"
     }
     maven {
-        url = 'https://repo.dmulloy2.net/nexus/repository/public/'
+        url = "https://repo.dmulloy2.net/nexus/repository/public/"
     }
 }
 
@@ -22,7 +22,7 @@ dependencies {
     compileOnly "com.destroystokyo.paper:paper-api:1.15.2-R0.1-SNAPSHOT"
     compileOnly "org.jetbrains:annotations:+"
     compileOnly "com.comphenix.protocol:ProtocolLib:4.5.0"
-    compile 'net.jodah:expiringmap:+'
+    compile "net.jodah:expiringmap:+"
     compile("com.google.inject:guice:4.2.2") {
         exclude group: "com.google.code.gson", module: "gson"
         exclude group: "com.google.guava", module: "guava"
@@ -53,6 +53,11 @@ shadowJar {
     exclude "META-INF/*.SF"
     exclude "META-INF/*.DSA"
     exclude "META-INF/*.RSA"
+
+    relocate "net.jodah", "me.piggypiglet.galacticraft.deps"
+    relocate "javax", "me.piggypiglet.galacticraft.deps.javax"
+    relocate "com.google", "me.piggypiglet.galacticraft.deps.google"
+    relocate "org.aopalliance", "me.piggypiglet.galacticraft.deps.aopalliance"
 
     destinationDirectory = file("server/plugins")
 }

@@ -7,6 +7,7 @@ import me.piggypiglet.galacticraft.guice.modules.DynamicModule;
 import me.piggypiglet.galacticraft.guice.modules.InitialModule;
 import me.piggypiglet.galacticraft.guice.objects.SafeInjector;
 import me.piggypiglet.galacticraft.moon.gravity.registerables.GravityRegisterable;
+import me.piggypiglet.galacticraft.moon.resourcepack.registerables.CreditLoggingRegisterable;
 import me.piggypiglet.galacticraft.moon.world.registerables.MoonWorldRegisterable;
 import me.piggypiglet.galacticraft.rocket.launch.registerables.LaunchComponentsRegisterable;
 import me.piggypiglet.galacticraft.rocket.registerables.RocketRecipeRegisterable;
@@ -23,9 +24,9 @@ import java.util.concurrent.atomic.AtomicReference;
 // ------------------------------
 public final class GalacticraftBootstrap extends JavaPlugin {
     private static final List<Class<? extends Registerable>> REGISTERABLES = Arrays.asList(
-            LaunchComponentsRegisterable.class, CommandsRegisterable.class, CommandHandlerRegisterable.class,
-            MoonWorldRegisterable.class, RocketRecipeRegisterable.class, EventsRegisterable.class,
-            GravityRegisterable.class
+            CreditLoggingRegisterable.class, LaunchComponentsRegisterable.class, CommandsRegisterable.class,
+            CommandHandlerRegisterable.class, MoonWorldRegisterable.class, RocketRecipeRegisterable.class,
+            EventsRegisterable.class, GravityRegisterable.class
     );
 
     @Override

@@ -28,8 +28,11 @@ public final class ConsoleInteractionHandler implements Listener {
 
         if (clicked == null) return;
 
+        final Player clicker = (Player) event.getWhoClicked();
+
         if (clicked.getType() == Material.FIRE_CHARGE) {
-            launch.launch((Player) event.getWhoClicked());
+            launch.launch(clicker);
+            clicker.closeInventory();
         }
     }
 }

@@ -13,10 +13,9 @@ import org.bukkit.WorldType;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
 
 import javax.inject.Inject;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 // ------------------------------
 // Copyright (c) PiggyPiglet 2020
@@ -25,12 +24,11 @@ import java.util.logging.Logger;
 public final class DimensionSwitcher extends PacketAdapterWrapper {
     private static final ProtocolManager PROTOCOL_MANAGER = ProtocolLibrary.getProtocolManager();
 
-    private final Logger logger;
+    @Inject private Logger logger;
 
     @Inject
     public DimensionSwitcher(@NotNull final JavaPlugin main) {
         super(main, PacketType.Play.Server.POSITION);
-        logger = main.getLogger();
     }
 
     @Override
@@ -48,7 +46,7 @@ public final class DimensionSwitcher extends PacketAdapterWrapper {
             PROTOCOL_MANAGER.sendServerPacket(player, packet, false);
         } catch (Exception exception) {
             player.kickPlayer("Dimension switch failure.");
-            logger.log(Level.SEVERE, "Something went wrong when switching " + player.getName() + "'s dimension.",
+            logger.error("Something went wrong when switching " + player.getName() + "'s dimension.",
                     exception);
         }
     }

@@ -22,7 +22,7 @@ import static org.bukkit.entity.EntityType.*;
 // https://www.piggypiglet.me
 // ------------------------------
 public final class MobAstronautMother implements Listener {
-    private static final Set<EntityType> DISABLED_MOBS = Stream.of(WITCH, SPIDER, CREEPER, BAT, PHANTOM)
+    private static final Set<EntityType> DISABLED_MOBS = Stream.of(WITCH, SPIDER, CREEPER, BAT, PHANTOM, ZOMBIE_VILLAGER)
             .collect(Collectors.toSet());
     private static final Set<EntityType> SPACE_MOBS = Stream.of(SKELETON, ZOMBIE)
             .collect(Collectors.toSet());
