@@ -43,7 +43,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public final class Launch {
-    private static final int COUNTDOWN_SECONDS = 10;
+    private static final int COUNTDOWN_SECONDS = 20;
     private static final int LIFT_SECONDS = 10;
 
     private final Set<LaunchComponent> countdownComponents;
